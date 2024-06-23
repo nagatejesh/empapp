@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login to Employee Management</title>
+</head>
+<body>
+<div th:insert="header :: header"></div>
+<form th:action="@{/login}" method="post">
+
+    <p th:if="${error}!=null">Bad Credentials</p>
+
+    <div>
+        <label for="username">User name</label>
+        <input type="text" name="username">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" name="password">
+    </div>
+    <div>
+        <button type="submit">Login</button>
+        <button type="reset">Clear</button>
+    </div>
+
+</form>
+</body>
+</html>
